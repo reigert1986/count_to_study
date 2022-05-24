@@ -2,31 +2,46 @@ const btnTwo = document.querySelector(".twentyfive");
 const btnFour = document.querySelector(".forty");
 const btnFive = document.querySelector(".fiftyfive");
 const timeleft = document.querySelector(".number");
+const timeFoward = document.querySelector(".timeFoward");
 const finalizar = document.querySelector(".final");
 const mainNumber = document.querySelector(".mainNumber");
 const seventyFive = document.querySelector(".seventy-five");
 
 //let contador = 0;
+
 let currentTime = timeleft.textContent; 
 var timeId = 0;
-
-seventyFive.addEventListener("click", ()=>{ 
+// se añade una escucha y se remueve la misma (75 min)
+const remove75 = ()=>{
 	contador = 4500;
 	var timeId = setInterval(conteo, 1000);
-});		
-btnTwo.addEventListener("click", (e)=>{ 
-	console.log(e);
+	seventyFive.removeEventListener("click", remove75);	
+}
+seventyFive.addEventListener("click", remove75);
+
+// se añade una escucha y se remueve la misma (25 min)
+const remove25 = ()=>{
 	contador = 1500;
 	var timeId = setInterval(conteo, 1000);
-});
-btnFour.addEventListener("click", ()=>{ 
+	btnTwo.removeEventListener("click", remove25);	
+}
+btnTwo.addEventListener("click", remove25);
+
+// se añade una escucha y se remueve la misma (40 min)
+const remove40 = ()=>{
 	contador = 2400;
 	var timeId = setInterval(conteo, 1000);
-});
-btnFive.addEventListener("click", ()=>{ 
+	btnFour.removeEventListener("click", remove40);	
+}
+btnFour.addEventListener("click", remove40);
+
+// se añade una escucha y se remueve la misma (55 min)
+const remove55 = ()=>{
 	contador = 3300;
 	var timeId = setInterval(conteo, 1000);
-});
+	btnFive.removeEventListener("click", remove55);	
+}
+btnFive.addEventListener("click", remove55);
 		
 		
 function conteo(){
@@ -38,11 +53,14 @@ function conteo(){
 	}		
 }
 function the_end() {
+	contador = 0;
 	finalizar.innerHTML = `
 		<div class="final">
      		<h2>Break!</h2>
+     		<span class="timeFoward" >${contador}</span>
 		</div>			`;
 	mainNumber.textContent = 0;	
+	
 }
 
 //Funcion para convertir segundos a minutos y horas
@@ -60,5 +78,6 @@ function segundosAString(segundos) {
 	return hora  + minutos + ':' + segundos;
 }
 
-		
+
+
 //let timeId = setInterval(conteo, 1000);
