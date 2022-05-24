@@ -1,0 +1,25 @@
+body {
+	background-image: repeating-linear-gradient(-45deg, #fff 0px, #fff 20px, #BEF0FF 20px, #BEF0FF 40px);
+}
+
+.main {
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background: linear-gradient( orange 46%,rebeccapurple );
+	
+}
+.mainBtn {
+	margin: 10px;
+}
+.mainNumber{
+	font-size: xx-large;
+	margin: 10px;
+	padding: 10px;	
+}
+.final {
+	border: 1px solid bisque;
+	background-color: skyblue;	
+}
