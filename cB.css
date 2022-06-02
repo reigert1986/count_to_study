@@ -3,7 +3,7 @@ body {
 }
 
 .main {
-	height: 200px;
+	height: 400px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,6 +12,7 @@ body {
 	
 }
 .mainBtn {
+	
 	margin: 10px;
 }
 .mainNumber{
@@ -20,6 +21,10 @@ body {
 	padding: 10px;	
 }
 .final {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	border: 1px solid bisque;
 	background-color: skyblue;	
 }
