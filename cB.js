@@ -11,6 +11,7 @@ const seventyFive = document.querySelector(".seventy-five");
 
 let currentTime = timeleft.textContent; 
 var timeId = 0;
+
 // se añade una escucha y se remueve la misma (75 min)
 const remove75 = ()=>{
 	contador = 4500;
@@ -53,14 +54,21 @@ function conteo(){
 	}		
 }
 function the_end() {
+	let timeId2 = setInterval(conteomas, 1000);
+	console.log(timeId2)
 	contador = 0;
+	contador++;
+	mainNumber.textContent = 0;
 	finalizar.innerHTML = `
 		<div class="final">
      		<h2>Break!</h2>
-     		<span class="timeFoward" >${contador}</span>
+     		<span class="timeFoward" >${segundosAString(timeId2)}</span>
 		</div>			`;
-	mainNumber.textContent = 0;	
-	
+		
+}
+function conteomas(){
+	//let contador = 0 ;
+	//return contador; 	
 }
 
 //Funcion para convertir segundos a minutos y horas
